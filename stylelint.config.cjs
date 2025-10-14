@@ -1,9 +1,12 @@
 module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-config-recommended-vue', 'stylelint-prettier/recommended'],
+  extends: ['stylelint-config-standard-scss', 'stylelint-config-recommended-vue', 'stylelint-prettier/recommended'],
   ignoreFiles: ['node_modules/**', '.nuxt/**', '.output/**'],
   plugins: ['stylelint-prettier', 'stylelint-order', 'stylelint-scss', 'stylelint-declaration-strict-value'],
   root: true,
   rules: {
+    'at-rule-no-unknown': null,
+    'scss/at-rule-no-unknown': true,
+
     'block-no-empty': true,
 
     'color-no-invalid-hex': true,
@@ -41,5 +44,6 @@ module.exports = {
     'string-no-newline': true,
 
     'unit-no-unknown': true,
+    'declaration-property-value-no-unknown': null,
   },
 }
