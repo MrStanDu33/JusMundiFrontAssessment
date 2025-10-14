@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use './variables' as vars;
+
+@function scale($value, $scale-factor: 0.5) {
+  // Scales a value linearly with viewport width, capped at original value
+  @return min(calc(#{$value} * #{$scale-factor} * 100vw / map.get(vars.$base-canvas, width)), $value);
+}
+
+@function responsive-margin($min, $max, $min-width, $max-width) {
+  // Interpolates margin-top between min and max depending on viewport width
+  @return calc(#{$min}px + (#{$max} - #{$min}) * ((100vw - #{$min-width}px) / (#{$max-width} - #{$min-width})));
+}
+
+@mixin responsive-image($map, $bg: null) {
+  background: if($bg, $bg, #fff);
+  border-radius: 50%;
+  box-shadow: if(map.has-key($map, blur), 0 0 scale(map.get($map, blur)) rgb(0 0 0 / 10%), null);
+  height: scale(if(map.has-key($map, circle), map.get($map, circle), map.get($map, width)));
+  left: scale(map.get($map, left));
+  padding-left: if(map.has-key($map, pad-left), scale(map.get($map, pad-left)), null);
+  padding-top: if(map.has-key($map, pad-top), scale(map.get($map, pad-top)), null);
+  position: absolute;
+  top: scale(map.get($map, top));
+  width: scale(if(map.has-key($map, circle), map.get($map, circle), map.get($map, width)));
+  z-index: map.get($map, z);
+}

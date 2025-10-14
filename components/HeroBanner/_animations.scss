@@ -1,0 +1,113 @@
+@use 'sass:map';
+@use './lib' as lib;
+@use './variables' as vars;
+
+@keyframes opacity-appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes icc-circle-appear {
+  $icc: map.get(vars.$elements, icc);
+  $final-size: lib.scale(map.get($icc, circle));
+
+  from {
+    $small-size: calc(#{$final-size} * 0.3);
+
+    box-shadow: 0 0 lib.scale(map.get($icc, blur)) rgb(0 0 0 / 0%);
+    height: $small-size;
+    left: calc(lib.scale(map.get($icc, left)) + ($small-size / 2));
+    opacity: 0;
+    top: calc(lib.scale(map.get($icc, top)) + ($small-size / 2));
+    width: $small-size;
+  }
+
+  to {
+    box-shadow: 0 0 lib.scale(map.get($icc, blur)) rgb(0 0 0 / 10%);
+    height: $final-size;
+    left: lib.scale(map.get($icc, left));
+    opacity: 1;
+    top: lib.scale(map.get($icc, top));
+    width: $final-size;
+  }
+}
+
+@keyframes jus-mundi-circle-appear {
+  $jus-mundi: map.get(vars.$elements, jus-mundi);
+
+  from {
+    left: calc(lib.scale(map.get($jus-mundi, left)) / 2);
+    opacity: 0;
+    top: calc(lib.scale(map.get($jus-mundi, top)) + 20px);
+  }
+
+  to {
+    left: lib.scale(map.get($jus-mundi, left));
+    opacity: 1;
+    top: lib.scale(map.get($jus-mundi, top));
+  }
+}
+
+@keyframes heading-appear {
+  from {
+    translate: 0 60px;
+  }
+
+  to {
+    translate: 0;
+  }
+}
+
+#background {
+  $animation-start: map.get(vars.$images-animation, third-step-trigger);
+  $animation-duration: map.get(vars.$images-animation, third-step-duration);
+
+  animation: $animation-duration cubic-bezier(0.18, -0.01, 0.11, 0.98) $animation-start opacity-appear forwards;
+}
+
+#jus-mundi {
+  $animation-start: map.get(vars.$images-animation, third-step-trigger);
+  $animation-duration: map.get(vars.$images-animation, third-step-duration);
+
+  animation: $animation-duration cubic-bezier(0.18, -0.01, 0.11, 0.98) $animation-start jus-mundi-circle-appear forwards;
+}
+
+#icc {
+  $animation-start: map.get(vars.$images-animation, first-step-trigger);
+  $animation-duration: map.get(vars.$images-animation, first-step-duration);
+
+  animation: $animation-duration ease-in-out $animation-start icc-circle-appear;
+}
+
+#icc-logo {
+  $animation-start: map.get(vars.$images-animation, second-step-trigger);
+  $animation-duration: map.get(vars.$images-animation, second-step-duration);
+
+  animation: $animation-duration ease-in-out $animation-start opacity-appear forwards;
+}
+
+#text-wrapper {
+  $animation-start: map.get(vars.$text-animation, first-step-trigger);
+  $animation-duration: map.get(vars.$text-animation, first-step-duration);
+
+  animation: $animation-duration cubic-bezier(0.18, -0.01, 0.11, 0.98) $animation-start opacity-appear forwards;
+}
+
+.heading {
+  $animation-start: map.get(vars.$text-animation, first-step-trigger);
+  $animation-duration: map.get(vars.$text-animation, first-step-duration);
+
+  animation: $animation-duration cubic-bezier(0.18, -0.01, 0.11, 0.98) $animation-start heading-appear forwards;
+}
+
+.button.goto-icc {
+  $animation-start: map.get(vars.$text-animation, second-step-trigger);
+  $animation-duration: map.get(vars.$text-animation, second-step-duration);
+
+  animation: $animation-duration ease-in-out $animation-start opacity-appear forwards;
+}

@@ -1,0 +1,58 @@
+$images-animation: (
+  first-step-trigger: 0ms,
+  first-step-duration: 1000ms,
+
+  second-step-trigger: 0ms + 1000ms + 10ms,
+  second-step-duration: 800ms,
+
+  third-step-trigger: 0ms + 1000ms + 10ms + 800ms + 0ms,
+  third-step-duration: 500ms,
+);
+$text-animation: (
+  first-step-trigger: 1000ms,
+  first-step-duration: 1500ms,
+
+  second-step-trigger: 1000ms + 1500ms + 100ms,
+  second-step-duration: 200ms,
+);
+$font-size: (
+  heading: 56px,
+  text: 18px,
+);
+$base-canvas: (
+  width: 720px,
+  height: 800px,
+);
+$elements: (
+  icc: (
+    z: 2,
+    circle: 483px,
+    logo: 323px,
+    left: 94px,
+    top: 42px,
+    pad-left: 93px,
+    pad-top: 158px,
+    blur: 128px,
+  ),
+  jus-mundi: (
+    z: 3,
+    circle: 187px,
+    logo: 107px,
+    left: 147px,
+    top: 488px,
+    pad-left: 40px,
+    pad-top: 74px,
+    blur: 192px,
+  ),
+  background: (
+    z: -1,
+    width: 496px,
+    left: 156px,
+    top: 255px,
+  ),
+);
+$tags: (
+  1: (height: 24px, left: 64px, top: 70px, rotate: 90deg),
+  2: (height: 24px, left: 64px, bottom: 41px),
+  3: (height: 39px, right: 61px, bottom: 41px, rotate: -45deg)
+);

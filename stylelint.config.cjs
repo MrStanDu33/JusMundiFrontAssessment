@@ -24,7 +24,7 @@ module.exports = {
     'order/properties-alphabetical-order': true,
 
     'property-no-unknown': true,
-
+    'no-invalid-position-at-import-rule': null,
     'scale-unlimited/declaration-strict-value': [
       ['/color$/', 'z-index', 'font-size', 'spacing'],
       {
