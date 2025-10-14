@@ -25,7 +25,7 @@ export default antfu(
     files: ['**/*.{js,ts,vue,cjs,mjs}'],
 
     languageOptions: {
-      parser: vueEslintParser, // ✅
+      parser: vueEslintParser,
       parserOptions: {
         ecmaVersion: 'latest',
         extraFileExtensions: ['.vue'],
@@ -85,6 +85,10 @@ export default antfu(
 
       'vue-scoped-css/no-unused-selector': 'warn',
       'vue/multi-word-component-names': 'off',
+      'vue/singleline-html-element-content-newline': 'off',
+      'vue/html-self-closing': {
+        html: { img: 'never' },
+      },
     },
   },
 )
