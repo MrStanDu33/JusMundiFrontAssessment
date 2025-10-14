@@ -29,23 +29,29 @@ export default defineNuxtConfig({
     [
       '@nuxt/fonts',
       {
-        defaults: {
-          weights: [400, 500, 700],
-        },
         families: [
           {
             global: true,
             name: 'IBM Plex Sans',
+            weights: [400, 500, 700],
+            preload: true,
+            display: 'swap',
             provider: 'google',
           },
+          {
+            global: true,
+            name: 'larken',
+            weights: [300, 400, 700, 800],
+            preload: true,
+            display: 'swap',
+            provider: 'local',
+          },
         ],
-        provider: 'google',
       },
     ],
   ],
 
   typescript: {
     strict: true,
-    typeCheck: true,
   },
 })
