@@ -1,5 +1,6 @@
 <template>
   <HeroBanner />
+  <CitationBanner />
 </template>
 
 <style>
