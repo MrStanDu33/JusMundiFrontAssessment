@@ -84,11 +84,15 @@ export default antfu(
       'style/quote-props': 'off',
 
       'vue-scoped-css/no-unused-selector': 'warn',
+      'vue/block-order': ['error', { order: ['template', 'script', 'style'] }],
+      'vue/html-self-closing': [
+        'error',
+        {
+          html: { component: 'always', normal: 'always', void: 'always' },
+        },
+      ],
       'vue/multi-word-component-names': 'off',
       'vue/singleline-html-element-content-newline': 'off',
-      'vue/html-self-closing': {
-        html: { img: 'never' },
-      },
     },
   },
 )

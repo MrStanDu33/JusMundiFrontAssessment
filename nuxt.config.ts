@@ -31,28 +31,28 @@ export default defineNuxtConfig({
       {
         families: [
           {
+            display: 'swap',
             global: true,
             name: 'IBM Plex Sans',
-            weights: [400, 500, 700],
             preload: true,
-            display: 'swap',
             provider: 'google',
+            weights: [400, 500, 700],
           },
           {
+            display: 'swap',
             global: true,
             name: 'larken',
-            weights: [300, 400, 700, 800],
             preload: true,
-            display: 'swap',
             provider: 'local',
+            weights: [300, 400, 700, 800],
           },
           {
+            display: 'swap',
             global: true,
             name: 'icons',
-            weights: [400],
             preload: true,
-            display: 'swap',
             provider: 'local',
+            weights: [400],
           },
         ],
       },
@@ -61,5 +61,14 @@ export default defineNuxtConfig({
 
   typescript: {
     strict: true,
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/style/_theme.scss" as theme;',
+        },
+      },
+    },
   },
 })
