@@ -3,10 +3,10 @@
 </template>
 
 <style scoped lang="scss">
-$color: #6ad300;
+@use 'sass:map';
 
 .tag {
-  background-color: $color;
+  background-color: map.get(theme.$fluo, green-for-white-bg);
   content: '';
   display: block;
   position: absolute;

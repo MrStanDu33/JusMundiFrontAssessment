@@ -1,6 +1,6 @@
 <template>
-  <component :is="props.tag" :class="[props.type, props.size === 'small' ? 'small' : '', 'button']">
-    <slot name="icon" v-if="slots.icon" />
+  <component :is="props.tag" class="button" :class="[props.type, props.size === 'small' ? 'small' : '']">
+    <slot v-if="slots.icon" name="icon" />
     <span class="text"><slot /></span>
   </component>
 </template>
@@ -11,47 +11,46 @@ interface Slots {
   default: string
 }
 
+const props = defineProps({
+  icon: {
+    required: false,
+    type: String,
+  },
+  size: {
+    default: 'regular',
+    required: false,
+    type: String as () => 'small' | 'regular',
+  },
+  tag: {
+    default: 'button',
+    required: false,
+    type: String,
+  },
+  type: {
+    default: 'primary',
+    required: false,
+    type: String as () => 'primary' | 'secondary',
+  },
+})
+
 const slots = defineSlots<Slots>()
 
 if (!slots.default) {
   throw new Error('Default slot is required and must be a string')
 }
-
-const props = defineProps({
-  size: {
-    type: String as () => 'small' | 'regular',
-    required: false,
-    default: 'regular',
-  },
-  icon: {
-    type: String,
-    required: false,
-  },
-  type: {
-    type: String as () => 'primary' | 'secondary',
-    required: false,
-    default: 'primary',
-  },
-  tag: {
-    type: String,
-    required: false,
-    default: 'button',
-  },
-})
 </script>
 
 <style scoped lang="scss">
-$color: #fff;
+@use 'sass:map';
 
 .button {
-  cursor: pointer;
   align-items: stretch;
-  background-color: $color;
   border: none;
   box-shadow: 0 8px 32px 0 rgb(37 79 109 / 24%);
+  cursor: pointer;
   display: flex;
   font-family: Lato, sans-serif;
-  font-size: 14px;
+  font-size: map.get(theme.$font, small);
   font-weight: 700;
   gap: 16px;
   letter-spacing: 2px;
@@ -60,13 +59,13 @@ $color: #fff;
 }
 
 .button.primary {
-  background-color: #009efe;
-  color: #fff;
+  background-color: map.get(theme.$main, blue-cta);
+  color: map.get(theme.$main, white);
 }
 
 .button.secondary {
-  background-color: #fff;
-  color: #000;
+  background-color: map.get(theme.$main, white);
+  color: map.get(theme.$main, dark-grey);
 }
 
 .button:not(.small) {

@@ -4,9 +4,9 @@
     <Tag />
     <Tag />
     <div id="image-wrapper">
-      <div class="absolute" id="icc"><img :src="IccLogo" alt="ICC" id="icc-logo" /></div>
-      <div class="absolute" id="jus-mundi"><img :src="JusMundiLogo" alt="Jus Mundi" id="jus-mundi-logo" /></div>
-      <img class="absolute" id="background" :src="background" alt="background files" />
+      <div id="icc" class="absolute"><img id="icc-logo" :src="IccLogo" alt="ICC" /></div>
+      <div id="jus-mundi" class="absolute"><img id="jus-mundi-logo" :src="JusMundiLogo" alt="Jus Mundi" /></div>
+      <img id="background" class="absolute" :src="background" alt="background files" />
     </div>
 
     <div id="text-wrapper">
@@ -28,10 +28,10 @@
 </template>
 
 <script setup lang="ts">
-import IccLogo from '@/assets/images/logo_icc.svg'
-import JusMundiLogo from '@/assets/images/logo_jm.svg'
 import background from '@/assets/images/case_bg.gif'
 import IconArrowUp from '@/assets/images/ico-arrow_up.svg'
+import IccLogo from '@/assets/images/logo_icc.svg'
+import JusMundiLogo from '@/assets/images/logo_jm.svg'
 </script>
 
 <style scoped lang="scss">
@@ -57,6 +57,7 @@ header {
 }
 
 @each $n, $props in vars.$tags {
+  // eslint-disable-next-line vue-scoped-css/no-unused-selector -- false-positive
   .tag:nth-of-type(#{$n}) {
     @each $prop, $value in $props {
       #{$prop}: $value;
@@ -86,7 +87,7 @@ header {
 }
 
 #jus-mundi {
-  @include lib.responsive-image(map.get(vars.$elements, jus-mundi), linear-gradient(0deg, #ffffffe5, #ffffff32));
+  @include lib.responsive-image(map.get(vars.$elements, jus-mundi));
 
   opacity: 0;
 }
@@ -131,6 +132,7 @@ header {
 }
 
 .heading {
+  color: map.get(theme.$main, fake-black);
   font-family: Larken, serif;
   font-size: map.get(vars.$font-size, heading);
   font-weight: 800;
@@ -141,6 +143,7 @@ header {
 }
 
 .subheading {
+  color: map.get(theme.$main, fake-black);
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: map.get(vars.$font-size, text);
   font-weight: 400;
