@@ -63,6 +63,7 @@ defineSlots<Slots>()
   font-weight: 400;
   line-height: 24px;
   margin-top: 24px;
+  padding: 0 20px;
   text-align: center;
 }
 </style>

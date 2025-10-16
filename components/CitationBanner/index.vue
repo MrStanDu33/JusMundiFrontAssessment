@@ -31,6 +31,7 @@
   letter-spacing: 2px;
   line-height: 16px;
   margin: 16px auto;
+  padding: 0 20px;
   text-align: center;
   text-decoration: underline;
   text-decoration-style: solid;
