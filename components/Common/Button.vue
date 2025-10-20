@@ -44,18 +44,16 @@ if (!slots.default) {
 @use 'sass:map';
 
 .button {
+  @include theme.typography(cta);
+
   align-items: stretch;
   border: none;
   box-shadow: 0 8px 32px 0 rgb(37 79 109 / 24%);
   cursor: pointer;
   display: flex;
-  font-family: Lato, sans-serif;
-  font-size: map.get(theme.$font, small);
-  font-weight: 700;
+  font-size: map.get(theme.$font-sizes, small);
   gap: 16px;
-  letter-spacing: 2px;
   padding: 20px 30px;
-  text-decoration: none;
 }
 
 .button.primary {

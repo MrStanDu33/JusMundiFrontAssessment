@@ -17,8 +17,34 @@ $secondary: (
 
 /* ======== FONTS ========= */
 
-$font: (
+$font-sizes: (
   regular: 1rem,
   small: 0.875rem,
   extra-small: 0.75rem,
+);
+$typography: (
+  medium-title: (
+    // stylelint-disable-next-line prettier/prettier -- prevent additional empty property to be created
+    font-family: ('Larken', serif),
+    font-weight: 800,
+    font-size: 56px,
+    line-height: 64px,
+    letter-spacing: -1px,
+  ),
+  p: (
+    // stylelint-disable-next-line prettier/prettier -- prevent additional empty property to be created
+    font-family: ('IBM Plex Sans', sans-serif),
+    font-weight: 400,
+    font-size: 18px,
+    line-height: 32px,
+  ),
+  cta: (
+    // stylelint-disable-next-line prettier/prettier -- prevent additional empty property to be created
+    font-family: ('Lato', sans-serif),
+    font-weight: 700,
+    font-size: 14px,
+    letter-spacing: 2px,
+    text-transform: uppercase,
+    text-decoration: none,
+  ),
 );

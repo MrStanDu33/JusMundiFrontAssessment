@@ -1,0 +1,16 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use 'sass:list';
+@use './theme' as theme;
+
+@mixin typography($style) {
+  $properties: map.get(theme.$typography, $style);
+
+  @if not $properties {
+    @error "Style `#{$style}` could not be found in `$typography` map.";
+  }
+
+  @each $prop, $value in $properties {
+    #{$prop}: #{$value};
+  }
+}

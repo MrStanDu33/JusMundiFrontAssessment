@@ -24,7 +24,7 @@ defineSlots<Slots>()
 .citation {
   color: map.get(theme.$main, fake-black);
   font-family: Larken, serif;
-  font-size: map.get(theme.$font, regular);
+  font-size: map.get(theme.$font-sizes, regular);
   font-style: italic;
   font-weight: 300;
   line-height: 32px;
@@ -58,7 +58,7 @@ defineSlots<Slots>()
   color: map.get(theme.$main, fake-black);
   display: block;
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: map.get(theme.$font, regular);
+  font-size: map.get(theme.$font-sizes, regular);
   font-style: normal;
   font-weight: 400;
   line-height: 24px;

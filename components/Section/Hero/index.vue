@@ -132,22 +132,19 @@ header {
 }
 
 .heading {
+  @include theme.typography(medium-title);
+
   color: map.get(theme.$main, fake-black);
-  font-family: Larken, serif;
   font-size: map.get(vars.$font-size, heading);
-  font-weight: 800;
-  letter-spacing: -1px;
-  line-height: 64px;
   margin: 0;
   width: 82%;
 }
 
 .subheading {
+  @include theme.typography(p);
+
   color: map.get(theme.$main, fake-black);
-  font-family: 'IBM Plex Sans', sans-serif;
   font-size: map.get(vars.$font-size, text);
-  font-weight: 400;
-  line-height: 32px;
   margin-top: 32px;
   width: 82%;
 }

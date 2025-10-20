@@ -23,12 +23,12 @@
 }
 
 .read-document {
+  @include theme.typography(cta);
+
   color: map.get(theme.$main, fake-black);
   display: block;
-  font-family: Lato, sans-serif;
-  font-size: map.get(theme.$font, extra-small);
+  font-size: map.get(theme.$font-sizes, extra-small);
   font-weight: 400;
-  letter-spacing: 2px;
   line-height: 16px;
   margin: 16px auto;
   padding: 0 20px;
@@ -36,7 +36,6 @@
   text-decoration: underline;
   text-decoration-style: solid;
   text-decoration-thickness: 0%;
-  text-transform: uppercase;
   text-underline-offset: 3px;
   width: max-content;
 }
