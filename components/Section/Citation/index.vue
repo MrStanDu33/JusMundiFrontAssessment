@@ -1,6 +1,6 @@
 <template>
   <section id="citation-wrapper">
-    <Citation>
+    <CommonCitation>
       <template #quote>
         Publicising and disseminating information about arbitration has been one of ICC’s commitments since its creation
         and an instrumental factor in facilitating the development of trade worldwide.
@@ -9,7 +9,7 @@
         Note to the Parties and the Arbitral Tribunals <br />
         on the Conduct of Arbitration under the ICC Rules of Arbitration
       </template>
-    </Citation>
+    </CommonCitation>
     <NuxtLink class="read-document" to="#" external target="_blank">read the whole document</NuxtLink>
   </section>
 </template>

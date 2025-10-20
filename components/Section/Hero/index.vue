@@ -1,8 +1,8 @@
 <template>
   <header>
-    <Tag />
-    <Tag />
-    <Tag />
+    <CommonTag />
+    <CommonTag />
+    <CommonTag />
     <div id="image-wrapper">
       <div id="icc" class="absolute"><img id="icc-logo" :src="IccLogo" alt="ICC" /></div>
       <div id="jus-mundi" class="absolute"><img id="jus-mundi-logo" :src="JusMundiLogo" alt="Jus Mundi" /></div>
@@ -15,15 +15,15 @@
         The International Chamber of Commerce (ICC) & Jus Mundi have joined forces to make ICC Arbitration Awards and
         related materials freely available to the global legal community.
       </p>
-      <Button tag="a" type="primary" class="button goto-icc" href="#">
+      <CommonButton tag="a" type="primary" class="button goto-icc" href="#">
         <template #icon><div class="caret-right-icon">N</div></template>
         ACCESS ICC AWARDS
-      </Button>
+      </CommonButton>
     </div>
-    <Button tag="a" size="small" type="secondary" class="button floating" href="#">
+    <CommonButton tag="a" size="small" type="secondary" class="button floating" href="#">
       <template #icon><img class="arrow-up-icon" :src="IconArrowUp" alt="arrow up" /></template>
       TRY JUS MUNDI
-    </Button>
+    </CommonButton>
   </header>
 </template>
 

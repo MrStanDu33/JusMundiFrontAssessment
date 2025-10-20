@@ -1,6 +1,6 @@
 <template>
-  <HeroBanner />
-  <CitationBanner />
+  <SectionHero />
+  <SectionCitation />
 </template>
 
 <style>
