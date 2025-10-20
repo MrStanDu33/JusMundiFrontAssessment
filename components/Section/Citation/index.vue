@@ -18,7 +18,7 @@
 @use 'sass:map';
 
 #citation-wrapper {
-  margin: 102px auto;
+  margin: 102px auto 0;
   max-width: 800px;
 }
 

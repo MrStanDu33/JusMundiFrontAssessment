@@ -135,7 +135,6 @@ header {
   @include theme.typography(medium-title);
 
   color: map.get(theme.$main, fake-black);
-  font-size: map.get(vars.$font-size, heading);
   margin: 0;
   width: 82%;
 }
@@ -144,7 +143,7 @@ header {
   @include theme.typography(p);
 
   color: map.get(theme.$main, fake-black);
-  font-size: map.get(vars.$font-size, text);
+  font-size: map.get(theme.$font-sizes, regular);
   margin-top: 32px;
   width: 82%;
 }

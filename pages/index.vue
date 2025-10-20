@@ -1,6 +1,7 @@
 <template>
   <SectionHero />
   <SectionCitation />
+  <SectionPartnership />
 </template>
 
 <style>
